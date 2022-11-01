@@ -6,9 +6,10 @@ using UnityEngine.InputSystem;
 public class MovementController : MonoBehaviour
 {
     public float playerSpeed = 5f;
+    public float rotationSpeed = 100f;
     PlayerInput playerInput;
 
-    Vector3 currentMovementInput;
+    Vector2 currentMovementInput;
     Vector3 currentMovement;
     bool isMovementPressed;
     float rotationFactorPerFrame = 1f;
@@ -24,22 +25,20 @@ public class MovementController : MonoBehaviour
 
     void OnMovementInput (InputAction.CallbackContext context)
     {
-        currentMovementInput = context.ReadValue<Vector3>();
+        currentMovementInput = context.ReadValue<Vector2>();
         currentMovement.x = currentMovementInput.x;
-        currentMovement.y = currentMovementInput.y;
-        currentMovement.z = currentMovementInput.z;
+        currentMovement.y = 0;
+        currentMovement.z = currentMovementInput.y;
 
-        isMovementPressed = currentMovementInput.x != 0 || currentMovementInput.y != 0 || currentMovementInput.z != 0;
+        isMovementPressed = currentMovementInput.x != 0 || currentMovementInput.y != 0;
     }
 
     void HandleRotation()
     {
-        Quaternion currentRotation = transform.rotation;
 
         if (isMovementPressed)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(currentMovement);
-            transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationFactorPerFrame * Time.deltaTime);
+            transform.Rotate(currentMovement, rotationSpeed * Time.deltaTime);
         }
 
     }
@@ -50,7 +49,7 @@ public class MovementController : MonoBehaviour
 
         //HandleAnimation would come here
 
-        transform.Translate(currentMovement * Time.deltaTime * playerSpeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * playerSpeed);
     }
 
     private void OnEnable()

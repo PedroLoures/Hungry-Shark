@@ -6,10 +6,14 @@ public class ChangeColorRenderer : MonoBehaviour
 {
     public List<MeshRenderer> renderers;
 
-    [HideInInspector]
     public Color currentColor;
     [HideInInspector]
     public Material currentMaterial;
+
+    public void Awake()
+    {
+        ChangeColor(currentColor);
+    }
 
     public GameObject ChangeColor(Color newColor)
     {

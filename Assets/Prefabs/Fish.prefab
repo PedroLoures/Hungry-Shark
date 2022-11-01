@@ -134,6 +134,8 @@ MonoBehaviour:
   renderers:
   - {fileID: 8167777287188941113}
   - {fileID: 1740968505915353329}
+  currentColor: {r: 0, g: 0.78, b: 0.716, a: 1}
+  currentMaterial: {fileID: 0}
 --- !u!114 &1094943190
 MonoBehaviour:
   m_ObjectHideFlags: 0
