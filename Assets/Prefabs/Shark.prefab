@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 8800587299287201904}
   - component: {fileID: 8591431457864694620}
   - component: {fileID: 5461879822872420275}
-  - component: {fileID: 1774097294698740355}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -168,19 +167,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1774097294698740355
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720799933594683224}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3359911599707457411
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +178,6 @@ GameObject:
   - component: {fileID: 693205024376230039}
   - component: {fileID: 3067078582291534454}
   - component: {fileID: 883043002912696665}
-  - component: {fileID: 1703979771427766706}
   m_Layer: 0
   m_Name: TailUo
   m_TagString: Untagged
@@ -265,19 +250,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1703979771427766706
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3359911599707457411}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5615571002939248401
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +261,6 @@ GameObject:
   - component: {fileID: 6669822396064827198}
   - component: {fileID: 3536526637320638473}
   - component: {fileID: 7447166385577756668}
-  - component: {fileID: 6931321436864897096}
   m_Layer: 0
   m_Name: Fin
   m_TagString: Untagged
@@ -362,19 +333,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6931321436864897096
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5615571002939248401}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5703065813550267183
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +344,6 @@ GameObject:
   - component: {fileID: 3930809419944964076}
   - component: {fileID: 3906201728464328492}
   - component: {fileID: 8116453055122822586}
-  - component: {fileID: 1800212272637697218}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -459,19 +416,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1800212272637697218
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5703065813550267183}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7808457865023818198
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +427,7 @@ GameObject:
   - component: {fileID: 23558824585983797}
   - component: {fileID: 6099224841564421493}
   - component: {fileID: 8671472266925752644}
+  - component: {fileID: 4128637341978171649}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Player
@@ -537,6 +482,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 2.7}
   m_Center: {x: 0.85, y: 0, z: 0}
+--- !u!54 &4128637341978171649
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7808457865023818198}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8193397451165155164
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +509,6 @@ GameObject:
   - component: {fileID: 9066526804947661518}
   - component: {fileID: 7262572724133602419}
   - component: {fileID: 1901968435743934391}
-  - component: {fileID: 3484986840258595925}
   m_Layer: 0
   m_Name: TailDown
   m_TagString: Untagged
@@ -621,16 +581,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3484986840258595925
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8193397451165155164}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     private List<GameObject> lives = new List<GameObject>();
 
     private int currentScore;
-    private List<GameObject> availableFishes;
+    private List<GameObject> availableFishes = new List<GameObject>();
     private GameObject targetFish;
 
     private float timerFishCreation = 0;
@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
             RemoveLives(1);
         }
         availableFishes.Remove(fish);
+        Destroy(fish);
     }
 
     public void ChangeTargetFish()
@@ -168,6 +169,7 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = true;
         Time.timeScale = 0f;
+        Debug.Log("GAME OVER");
         //Show Game Over Screen
     }
 }
