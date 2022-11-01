@@ -21,16 +21,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    [Header("Lives")]
     public Transform livesParent;
     public GameObject livesPrefab;
     public int livesCount;
 
+    [Header("Score")]
     public TextMeshProUGUI scoreText;
+    public int targetValue = 100;
 
+    [Header("Fish")]
+    public Transform fishList;
     public int baseFishCount = 10;
     public int maxFishCount = 20;
     public float fishEverySeconds = 30f;
     public GameObject fishPrefab;
+    public Transform fishTank;
+
+
+    [Header("Hunt")]
     public Color targetColor;
 
     private List<GameObject> lives = new List<GameObject>();
@@ -39,6 +48,23 @@ public class GameManager : MonoBehaviour
     private List<GameObject> availableFishes;
     private GameObject targetFish;
 
+    private float timerFishCreation = 0;
+    private void Update()
+    {
+        if (availableFishes.Count < maxFishCount)
+        {
+            if (timerFishCreation < fishEverySeconds)
+            {
+                timerFishCreation += Time.deltaTime;
+            }
+            else
+            {
+                timerFishCreation = 0;
+                CreateFish();
+            }
+        }
+    }
+
     private void Awake()
     {
         //Set Lives
@@ -46,6 +72,46 @@ public class GameManager : MonoBehaviour
         {
             lives.Add(Instantiate(livesPrefab, livesParent));
         }
+
+        //Create base fishes
+        for (int i = 0; i < baseFishCount; i++)
+        {
+            CreateFish();
+        }
+
+        targetFish = availableFishes[Random.Range(0, availableFishes.Count)].GetComponent<ChangeColorRenderer>().ChangeColor(targetColor);
+    }
+
+    public void CreateFish()
+    {
+        //Halfing before to avoid double calculations
+        Vector3 halfScale = new Vector3(fishTank.localScale.x / 2 - fishPrefab.transform.localScale.x * 1.5f,
+                                        fishTank.localScale.y / 2 - fishPrefab.transform.localScale.y * 1.5f,
+                                        fishTank.localScale.z / 2 - fishPrefab.transform.localScale.z * 1.5f);
+        Vector3 position = new Vector3(
+            Random.Range(fishTank.position.x - halfScale.x, fishTank.position.x + halfScale.x),
+            Random.Range(fishTank.position.y - halfScale.y, fishTank.position.y + halfScale.y),
+            Random.Range(fishTank.position.z - halfScale.z, fishTank.position.z + halfScale.z)
+            );
+        availableFishes.Add(Instantiate(fishPrefab, position, Quaternion.identity, fishList));
+    }
+
+    public void KillFish(GameObject fish)
+    {
+        if (fish == targetFish)
+        {
+            ChangeTargetFish();
+            ChangeScore(targetValue);
+        } else
+        {
+            RemoveLives(1);
+        }
+        availableFishes.Remove(fish);
+    }
+
+    public void ChangeTargetFish()
+    {
+        targetFish = availableFishes[Random.Range(0, availableFishes.Count)].GetComponent<ChangeColorRenderer>().ChangeColor(targetColor);
     }
 
     public void ChangeScore(int value)
@@ -90,10 +156,18 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+
+        if (remainingLives.Count == 0)
+        {
+            GameOver();
+        }
     }
 
-    public void CreateFish()
+    bool isGameOver = false;
+    public void GameOver()
     {
-
+        isGameOver = true;
+        Time.timeScale = 0f;
+        //Show Game Over Screen
     }
 }

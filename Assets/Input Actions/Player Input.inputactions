@@ -28,7 +28,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "Up",
                     "id": "aad362b1-51e5-42ad-97d1-56d802d8ebbf",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -39,7 +39,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "Down",
                     "id": "c4f9f12c-9513-4acf-8318-35aed810548d",
                     "path": "<Keyboard>/s",
                     "interactions": "",
@@ -50,8 +50,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "81b6fc59-c069-48da-ad18-e6d43cd7f500",
+                    "name": "Left",
+                    "id": "a369a05b-88a4-459a-bdfd-cb1f25639aa0",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -61,8 +61,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
-                    "id": "4a3f53a8-cfeb-45bb-8ebf-6ae40369d573",
+                    "name": "Right",
+                    "id": "12ddd58c-c34d-417b-bd81-3c7cce4284f5",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -72,9 +72,20 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "forward",
-                    "id": "66106f11-8ca6-4ce9-b84d-2886a2287d62",
+                    "name": "Forward",
+                    "id": "d0f0ef2b-f289-4f0f-8188-8bd6a5b650c6",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Backward",
+                    "id": "88da19cd-fa19-4733-80ae-7e9f51194ad5",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

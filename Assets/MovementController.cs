@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class MovementController : MonoBehaviour
 {
+    public float playerSpeed = 5f;
     PlayerInput playerInput;
 
     Vector3 currentMovementInput;
@@ -49,7 +50,7 @@ public class MovementController : MonoBehaviour
 
         //HandleAnimation would come here
 
-        transform.Translate(currentMovement * Time.deltaTime);
+        transform.Translate(currentMovement * Time.deltaTime * playerSpeed);
     }
 
     private void OnEnable()
